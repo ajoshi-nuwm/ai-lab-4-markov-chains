@@ -37,8 +37,9 @@ func (node *Node) contains(word string) (bool, *Node) {
 func (node *Node) AddNode(other *Node) {
 	if contains, found := node.contains(other.word); contains {
 		node.nodes[found] += 1
+	} else {
+		node.nodes[other] = 1
 	}
-	node.nodes[other] = 1
 }
 
 func (segment *Segment) isInSegment(value float64) bool {
